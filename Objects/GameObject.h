@@ -1,24 +1,45 @@
-//
-// Created by VidBe on 22/02/2025.
-//
+#ifndef GAME_OBJECT_H
+#define GAME_OBJECT_H
 
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
+#include <SFML/Graphics.hpp>
+#include <string>
+#include "../Global.h"
 
-#include "SFML/Graphics.hpp"
-
+enum class Direction;
 
 class GameObject {
 public:
-    sf::Texture objectTexture;
-    sf::Sprite objectSprite;
+    const int id;
+    int spriteRow;
+    int spriteCol;
+    int spriteTimer;
+    float speed;
+    sf::CircleShape ySortOrigin;
+    sf::RectangleShape hitBoxShape;
+    sf::FloatRect hitBox;
 
-    explicit GameObject(const sf::Texture &objTexture,const int textureRectSize): objectSprite(objTexture) {
-        objectSprite.setTextureRect(sf::IntRect({0,0},{textureRectSize,textureRectSize}));
-    }
+    GameObject(int id, const std::string& textureFile, int textureRectSize, int col, int row);
 
+    GameObject(int id, const std::string &textureFile, int textureRectSize, int col, int row, float hitBoxSizeX,
+               float hitBoxSizeY, float hBOriginX, float hBOriginY);
+
+    virtual void animateObject();
+
+    virtual void updateHitBox();
+
+    virtual ~GameObject() = default;
+
+    virtual void update(float deltaTime);
+    virtual void draw(sf::RenderWindow &window);
+
+    // Getters for rendering order and position
+    const sf::Sprite& getSprite() const;
+    sf::Vector2f getPosition() const;
+    float getWorldY() const;
+protected:
+    sf::Texture texture;
+    sf::Sprite sprite;
+    int textureRectScale;
 };
 
-
-
-#endif //GAMEOBJECT_H
+#endif // GAME_OBJECT_H

@@ -13,15 +13,17 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 add_executable(untitled1 main.cpp
-        Player.cpp
-        Player.h
-        Global.cpp
+        Objects/Player.h
         Global.h
         TileManager/TileMap.h
-        Objects/GameObject.cpp
         Objects/GameObject.h
-        Objects/FirePit.cpp
-        Objects/FirePit.h
+        GameEngine.cpp
+        GameEngine.h
+        Objects/GameObject.cpp
+        Objects/Player.cpp
+        Managers/ObjectManager.cpp
+        Managers/ObjectManager.h
+        TileManager/TileMap.cpp
 )
 target_compile_features(untitled1 PRIVATE cxx_std_17)
 target_link_libraries(untitled1 PRIVATE SFML::Graphics)

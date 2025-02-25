@@ -57,17 +57,9 @@ build CMakeFiles/untitled1.dir/main.cpp.obj: CXX_COMPILER__untitled1_unscanned_D
   OBJECT_DIR = CMakeFiles\untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled1.dir
 
-build CMakeFiles/untitled1.dir/Player.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/Player.cpp || cmake_object_order_depends_target_untitled1
+build CMakeFiles/untitled1.dir/GameEngine.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/GameEngine.cpp || cmake_object_order_depends_target_untitled1
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\untitled1.dir\Player.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/VidBe/CLionProjects/untitled1/cmake-build-debug/_deps/sfml-src/include
-  OBJECT_DIR = CMakeFiles\untitled1.dir
-  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir
-
-build CMakeFiles/untitled1.dir/Global.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/Global.cpp || cmake_object_order_depends_target_untitled1
-  DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\untitled1.dir\Global.cpp.obj.d
+  DEP_FILE = CMakeFiles\untitled1.dir\GameEngine.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem C:/Users/VidBe/CLionProjects/untitled1/cmake-build-debug/_deps/sfml-src/include
   OBJECT_DIR = CMakeFiles\untitled1.dir
@@ -81,13 +73,29 @@ build CMakeFiles/untitled1.dir/Objects/GameObject.cpp.obj: CXX_COMPILER__untitle
   OBJECT_DIR = CMakeFiles\untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Objects
 
-build CMakeFiles/untitled1.dir/Objects/FirePit.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/Objects/FirePit.cpp || cmake_object_order_depends_target_untitled1
+build CMakeFiles/untitled1.dir/Objects/Player.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/Objects/Player.cpp || cmake_object_order_depends_target_untitled1
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\untitled1.dir\Objects\FirePit.cpp.obj.d
+  DEP_FILE = CMakeFiles\untitled1.dir\Objects\Player.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem C:/Users/VidBe/CLionProjects/untitled1/cmake-build-debug/_deps/sfml-src/include
   OBJECT_DIR = CMakeFiles\untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Objects
+
+build CMakeFiles/untitled1.dir/Managers/ObjectManager.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/Managers/ObjectManager.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Managers\ObjectManager.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/VidBe/CLionProjects/untitled1/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Managers
+
+build CMakeFiles/untitled1.dir/TileManager/TileMap.cpp.obj: CXX_COMPILER__untitled1_unscanned_Debug C$:/Users/VidBe/CLionProjects/untitled1/TileManager/TileMap.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\TileManager\TileMap.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/VidBe/CLionProjects/untitled1/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\TileManager
 
 
 # =============================================================================
@@ -97,7 +105,7 @@ build CMakeFiles/untitled1.dir/Objects/FirePit.cpp.obj: CXX_COMPILER__untitled1_
 #############################################
 # Link the executable bin\untitled1.exe
 
-build bin/untitled1.exe: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.obj CMakeFiles/untitled1.dir/Player.cpp.obj CMakeFiles/untitled1.dir/Global.cpp.obj CMakeFiles/untitled1.dir/Objects/GameObject.cpp.obj CMakeFiles/untitled1.dir/Objects/FirePit.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libfreetyped.a || _deps/sfml-build/lib/libfreetyped.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
+build bin/untitled1.exe: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.obj CMakeFiles/untitled1.dir/GameEngine.cpp.obj CMakeFiles/untitled1.dir/Objects/GameObject.cpp.obj CMakeFiles/untitled1.dir/Objects/Player.cpp.obj CMakeFiles/untitled1.dir/Managers/ObjectManager.cpp.obj CMakeFiles/untitled1.dir/TileManager/TileMap.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libfreetyped.a || _deps/sfml-build/lib/libfreetyped.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/sfml-build/lib/libsfml-graphics-s-d.a  _deps/sfml-build/lib/libsfml-window-s-d.a  _deps/sfml-build/lib/libsfml-system-s-d.a  -lopengl32  -lwinmm  -lgdi32  _deps/sfml-build/lib/libfreetyped.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled1.dir
