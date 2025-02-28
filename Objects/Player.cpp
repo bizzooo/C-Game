@@ -9,7 +9,7 @@
 #include "../Global.h"
 
 Player::Player(const int id,const std::string& textureFile, int col, int row)
-    : GameObject(id, textureFile, 32, col,row)
+    : GameObject(id, textureFile, 32, col,row,scaledSize,32*scale,scaledSize/2,scaledSize*2)
 {
     spriteCol = 0;
     spriteRow = 0;
@@ -19,13 +19,6 @@ Player::Player(const int id,const std::string& textureFile, int col, int row)
     sprite.setScale({3.f, 3.f});
     sprite.setOrigin({32.f, 48.f});
     sprite.setOrigin({static_cast<float>(64/2), static_cast<float>(64)});
-    hitBoxShape.setSize({scaledSize,32*scale});
-    hitBoxShape.setOrigin({scaledSize/2,scaledSize*2});
-    hitBoxShape.setPosition(sprite.getPosition());
-    hitBoxShape.setFillColor(sf::Color::Transparent);
-    hitBoxShape.setOutlineThickness(1.f);
-    hitBoxShape.setOutlineColor(sf::Color::Red);
-    hitBox = hitBoxShape.getGlobalBounds();
 }
 
 void Player::idleAnimation() {
@@ -181,18 +174,18 @@ void Player::update(float deltaTime) {
 }
 
 void Player::handleCollision(GameObject* A) {
-    if (hitBox.findIntersection(A->hitBox)) {
-        sf::FloatRect intersection = hitBox.findIntersection(A->hitBox).value();
+    if (hitBox->value.findIntersection(A->hitBox->value)) {
+        sf::FloatRect intersection = hitBox->value.findIntersection(A->hitBox->value).value();
         sf::Vector2f mtv(0.f,0.f);
 
         if (intersection.size.x < intersection.size.y) {
-            if (hitBox.position.x < A->hitBox.position.x) {
+            if (hitBox->value.position.x < A->hitBox->value.position.x) {
                 mtv.x = -intersection.size.x;
             } else {
                 mtv.x = intersection.size.x;
             }
         } else {
-            if (hitBox.position.y < A->hitBox.position.y) {
+            if (hitBox->value.position.y < A->hitBox->value.position.y) {
                 mtv.y = -intersection.size.y;
             } else {
                 mtv.y = intersection.size.y;

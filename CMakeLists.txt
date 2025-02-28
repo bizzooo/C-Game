@@ -24,6 +24,10 @@ add_executable(untitled1 main.cpp
         Managers/ObjectManager.cpp
         Managers/ObjectManager.h
         TileManager/TileMap.cpp
+        Objects/Projectile.cpp
+        Objects/Projectile.h
+        Objects/hitBox.cpp
+        Objects/hitBox.h
 )
 target_compile_features(untitled1 PRIVATE cxx_std_17)
 target_link_libraries(untitled1 PRIVATE SFML::Graphics)

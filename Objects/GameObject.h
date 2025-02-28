@@ -3,25 +3,30 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+
+#include "HitBox.h"
 #include "../Global.h"
+
+class HitBox;
 
 enum class Direction;
 
 class GameObject {
 public:
-    const int id;
+    std::optional<const int> id;
     int spriteRow;
     int spriteCol;
     int spriteTimer;
     float speed;
     sf::CircleShape ySortOrigin;
-    sf::RectangleShape hitBoxShape;
-    sf::FloatRect hitBox;
+    HitBox* hitBox;
 
-    GameObject(int id, const std::string& textureFile, int textureRectSize, int col, int row);
+    GameObject();
 
     GameObject(int id, const std::string &textureFile, int textureRectSize, int col, int row, float hitBoxSizeX,
                float hitBoxSizeY, float hBOriginX, float hBOriginY);
+
+    GameObject(const std::string &textureFile, int textureRectSize);
 
     virtual void animateObject();
 

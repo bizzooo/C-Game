@@ -26,7 +26,7 @@ void ObjectManager::drawAll(sf::RenderWindow &window) {
         window.draw(obj->getSprite());
         if (debugMode) {
             window.draw(obj->ySortOrigin);
-            window.draw(obj->hitBoxShape);
+            window.draw(obj->hitBox->shape);
         }
     }
 }
